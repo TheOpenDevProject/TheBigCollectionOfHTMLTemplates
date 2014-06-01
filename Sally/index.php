@@ -1,3 +1,9 @@
+<?php
+//Just going to make sure our mysqli class is working
+require_once('class/mysql_connector.php');
+//In reality we will NEVER EVER directly create an object from this class
+$myDBTest = new mysqlConnect();
+?>
 <!DOCTYPE HTML>
 <head>
 <title>Sally's Clothes Shop</title>
