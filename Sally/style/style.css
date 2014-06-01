@@ -1,8 +1,14 @@
 body{
 margin:0;
 background-color:#6D47BF;
+color:#fff; /*Force gloabl style over ride of font color*/
+font-family:sans-serif;
 }
-
+/*Resets*/
+a{
+text-decoration:none;
+color:#fff;
+}
 #clean-header{
 width:98%;
 min-height:50px;
@@ -13,11 +19,65 @@ font-family:sans-serif;
 font-size:2em;
 border-bottom-style:solid;
 }
+#menu-sys{
+visibility:hidden;
+}
+#menu-sys:target{
+visibility:visible;
+}
+
+#add-customer-form{
+visibility:hidden;
+float:left;
+min-width:50%;
+background-color:#FF675C;
+}
+
+#add-customer-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#create-purchase-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+}
+
+#create-purchase-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#product-manager-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+}
+
+#product-manager-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#records-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+}
+
+#records-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
 
 #center-fix{
 width:50%;
 margin:9.5% auto 0 auto;
 
+}
+#cust-name-submit{
+float:right;
 }
 .txt-f-r{
 float:right;
