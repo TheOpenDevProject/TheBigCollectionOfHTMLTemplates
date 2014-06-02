@@ -1,15 +1,18 @@
 <?php
 //Just a little mySQLI class for later
-
 class mysqlConnect{
 
-	public function __constructor(){
-		$mysqlDB = new mysqli("localhost","root","toor","sally_shop");
+	public function __construct(){
+		$mysqlDB = new mysqli("localhost","dillonisgay","dillon","sally_clothes");
 	//Do a little error handling for good measure
-		if($mysqliDB->connect_errno){
-		echo "I simply refuse to connect to the MYSQL Database because i hate you" . "No but here is the error $mysqliDB->connect_error";
+	if ($mysqlDB->connect_errno) 
+	{
+	echo "Failed to connect to MySQL: (" . $mysqlDB->connect_errno . ") " . $mysqlDB->connect_error;
 		}
 	}
+	
+	
+	
 };
 
 ?>

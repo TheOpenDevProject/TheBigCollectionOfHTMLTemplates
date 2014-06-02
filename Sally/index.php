@@ -1,8 +1,9 @@
 <?php
+error_reporting(E_ALL);
 //Just going to make sure our mysqli class is working
-require_once('class/mysql_connector.php');
+require_once('class/mysqli.functions.php');
 //In reality we will NEVER EVER directly create an object from this class
-$myDBTest = new mysqlConnect();
+
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -23,22 +24,22 @@ $myDBTest = new mysqlConnect();
 	<div id="add-customer-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Add A Customer</h1>
-	<form id="addcst" action="php_class/addcustomer.php" method="post">
+	<form id="addcst" action="class/exec.php?type=0" method="post">
 	<table>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Customer First(Name)</td>
+	<td><input id="cust-name-input" name="customer-first-name" type="text"/></td>
 	</tr>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Customer Last(Name)</td>
+	<td><input id="cust-name-input" name="customer-last-name" type="text"/></td>
 	</tr>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Customer Email</td>
+	<td><input id="cust-name-input" name="customer-email" type="text"/></td>
 	</tr>
 		<tr>
 	<td>Add Record</td>
@@ -54,7 +55,7 @@ $myDBTest = new mysqlConnect();
 	<div id="create-purchase-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Create A Purchase</h1>
-	<form id="addcst" action="php_class/addcustomer.php" method="post">
+	<form id="xaddcst" action="php_class/addcustomer.php" method="post">
 	<table>
 	
 	<tr>
@@ -85,7 +86,7 @@ $myDBTest = new mysqlConnect();
 	<div id="product-manager-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Add A Product</h1>
-	<form id="addcst" action="php_class/addcustomer.php" method="post">
+	<form id="zaddcst" action="php_class/addcustomer.php" method="post">
 	<table>
 	
 	<tr>
@@ -116,7 +117,7 @@ $myDBTest = new mysqlConnect();
 	<div id="records-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Add A Customer</h1>
-	<form id="addcst" action="php_class/addcustomer.php" method="post">
+	<form id="aaddcst" action="php_class/addcustomer.php" method="post">
 	<table>
 	
 	<tr>
