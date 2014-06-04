@@ -18,7 +18,7 @@ require_once('class/mysqli.functions.php');
 	<a href="#add-customer-form"><div class="pos-system-select" id="pos-green"><div class="txt-f-r">Add Customer</div></div></a>
 	<a href="#create-purchase-form"><div class="pos-system-select" id="pos-red"><div class="txt-f-r">Create Purchases</div></div></a>
 	<a href="#product-manager-form"><div class="pos-system-select" id="pos-blue"><div class="txt-f-r">Product Manager</div></div></a>
-	<a href="#records-form"><div class="pos-system-select" id="pos-yellow"><div class="txt-f-r">Records</div></div></a>
+	<a href="#records-form"><div class="pos-system-select" id="pos-yellow"><div class="txt-f-r">Reports</div></div></a>
 	</div>
 	<!--Add customer form-->
 	<div id="add-customer-form">
@@ -59,13 +59,13 @@ require_once('class/mysqli.functions.php');
 	<table>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Customer ID</td>
+	<td><input id="cust-name-input" name="customer-ID" type="text"/></td>
 	</tr>
 	
 	<tr>
 	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td><input id="cust-name-input" name="product-ID" type="text"/></td>
 	</tr>
 	
 	<tr>
@@ -133,31 +133,11 @@ require_once('class/mysqli.functions.php');
 		<!--Add customer form-->
 	<div id="records-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
-	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Add A Customer</h1>
-	<form id="aaddcst" action="php_class/addcustomer.php" method="post">
-	<table>
-	
-	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
-	</tr>
-	
-	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
-	</tr>
-	
-	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
-	</tr>
-		<tr>
-	<td>Add Record</td>
-	<td><input id="cust-name-submit" value="submit" type="Submit" /></td>
-	</tr>
-	</table>
-	
-	</form>
+	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Generated Report</h1>
+	<?php
+	$databaseIO = new Transaction();
+	echo $databaseIO->generateInlineReport(); //Echo out the HTML table that the class returns
+	?>
 	</div>
 	<!--End Of Form-->
 	</div>

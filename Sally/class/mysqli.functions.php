@@ -58,13 +58,73 @@ class Transaction extends sqlConnection{
 	
 	}
 	////////////////////////////////////////////////////////////////////////////
+
+	public function get_Items_Stockage($i){
+	if(!$p_stmt = $this->mysql->prepare("SELECT product_ID,product_Type,product_Name,product_Desc,product_Price,product_ninstock FROM products WHERE product_ID = ?")){
+		echo "Error in preparing MYSQL statement"; //Something went wrong and we want to know...
+		}
+		
+	if(!$p_stmt->bind_param("i",$i)){
+		echo "Error in binding a LOOKUP key";
+		}
+		
+	if(!$p_stmt->execute()){
+	die("Fatal error: Could not execute mysql query");
+	}
+	
+	if(!$p_stmt->bind_result($product_ID,$product_Type,$product_Name,$product_Desc,$product_Price,$nstock)){
+	echo "No results were bound";
+	}
+	
+	while($p_stmt->fetch()){
+		return $itemArray = array(
+		"product_ID" => $product_ID,
+		"product_Type" => $product_Type,
+		"product_Name" => $product_Name,
+		"product_Desc" => $product_Desc,
+		"product_Price" => $product_Price,
+		"stockLeft" => $nstock
+			);
+		}
+		$p_stmt->close();
+	
+	}
+	////////////////////////////////////////////////////////////////////////////
 	public function GetNProducts(){
 	    $sql = "SELECT sTypeID FROM stock_types";
         $result = $this->mysql->query($sql);
 		return $result->num_rows;
 	}
+	public function GetNCustomers(){
+	$sql = "SELECT customer_ID FROM customers";
+	$result = $this->mysql->query($sql);
+	return $result->num_rows;
+	}
+	public function GetNStock(){
+	$sql = "SELECT product_ID FROM products";
+	$result = $this->mysql->query($sql);
+	return $result->num_rows;
+	}
 	///////////////////////////////////////////////////////////////////////////
+	public function generateInlineReport(){
+	//
+	//Do Some Prep Work :This is not a fast function:
+	//
+	$nOfStockCats = $this->GetNProducts();
+	$nOfProducts = $this->GetNStock();
+	$nOfCustomers = $this->GetNCustomers();
+	//3 DB Calls made... Holly crap that is a lot of over head for mySQL
+	$returnTable = '<table>';
+	$returnTable .='<th>Types of items in stock</th>';
 	
+	for($i = 1; $i <= $nOfStockCats;$i++){
+	$returnTable .= '<tr>' .'<td>Category ID: ' . $i . '</td>' . '<td>' . $this->get_Product_cats($i) . '</td></tr>';
+	}
+	$returnTable .='<th>Items & Stocks</th>';
+	
+	$returnTable .= '</table>';
+	return $returnTable;
+	}
 	
 	};
 ?>
