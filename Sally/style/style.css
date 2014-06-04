@@ -53,6 +53,7 @@ position:absolute; /*Close enough..*/
 float:left;
 visibility:hidden;
 min-width:50%;
+background-color:#FF675C;
 }
 
 #product-manager-form:target{

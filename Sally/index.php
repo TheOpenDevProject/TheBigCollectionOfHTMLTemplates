@@ -51,7 +51,7 @@ require_once('class/mysqli.functions.php');
 	</div>
 	<!--End Of Form-->
 	
-		<!--Add customer form-->
+		<!--Add Purchase form-->
 	<div id="create-purchase-form">
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Create A Purchase</h1>
@@ -84,27 +84,44 @@ require_once('class/mysqli.functions.php');
 	
 		<!--Add customer form-->
 	<div id="product-manager-form">
+
 	<a style="margin-left:83%;"href="#menu-sys">Back To Main Menu</a>
 	<h1 style="margin:0;color:#fff;font-family:sans-serif;background-color:#5CC4FF;text-align:center;">Add A Product</h1>
-	<form id="zaddcst" action="php_class/addcustomer.php" method="post">
+	<form id="zaddcst" action="class/exec.php?type=2" method="post">
 	<table>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Product Type</td>
+	<td>
+	<select name="product_c_s">
+	<?php
+	$databaseIO = new Transaction();
+	$max = $databaseIO->GetNProducts();
+	for($i = 1; $i <= $max;$i++){
+	echo '<option value=' . '"' . $i . '"' . '>' . $databaseIO->get_Product_cats($i) . '</option>';
+	}
+	?>	
+	</select>
+	</td>
 	</tr>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Product Name</td>
+	<td><input id="cust-name-input" name="product_name" type="text"/></td>
 	</tr>
 	
 	<tr>
-	<td>Customer Name</td>
-	<td><input id="cust-name-input" name="customer-name" type="text"/></td>
+	<td>Price($)</td>
+	<td><input id="cust-name-input" name="product_price" type="text"/></td>
 	</tr>
-		<tr>
-	<td>Add Record</td>
+	
+	<tr>
+	<td>Product Description</td>
+	<td><textarea id="cust-name-input" name="product_desc" type="text"></textarea></td>
+	</tr>
+	
+	<tr>
+	<td>Add Product</td>
 	<td><input id="cust-name-submit" value="submit" type="Submit" /></td>
 	</tr>
 	</table>

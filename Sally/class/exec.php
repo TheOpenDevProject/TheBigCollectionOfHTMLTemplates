@@ -9,7 +9,11 @@ die("Type must be specified");
 }
 
 if($exec_type == 0){
-print_r($_POST);
-$databaseIO->Add_Customer($_GET['customer-first-name'],$_GET['customer-last-name'],$_GET['customer-email']);
+$databaseIO->Add_Customer($_POST['customer-first-name'],$_POST['customer-last-name'],$_POST['customer-email']);
+echo 'Customer Added!';
+}
+
+if($exec_type == 1){
+
 }
 ?>
