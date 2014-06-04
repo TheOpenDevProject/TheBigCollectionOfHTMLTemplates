@@ -117,7 +117,7 @@ require_once('class/mysqli.functions.php');
 	
 	<tr>
 	<td>Product Description</td>
-	<td><textarea id="cust-name-input" name="product_desc" type="text"></textarea></td>
+	<td><input id="AX" type="text" name="product_desc"></textarea></td><!--#BugTrack 0012 Textarea not posting-->
 	</tr>
 	
 	<tr>
