@@ -1,0 +1,126 @@
+body{
+margin:0;
+background-color:#6D47BF;
+color:#fff; /*Force gloabl style over ride of font color*/
+font-family:sans-serif;
+}
+/*Resets*/
+a{
+text-decoration:none;
+color:#fff;
+}
+#clean-header{
+width:98%;
+min-height:50px;
+padding-left:2%;
+line-height:100px;
+color:#fff;
+font-family:sans-serif;
+font-size:2em;
+border-bottom-style:solid;
+}
+#menu-sys{
+visibility:hidden;
+}
+#menu-sys:target{
+visibility:visible;
+}
+td{
+background-color:#fff;
+color:#000;
+}
+th{
+background-color:#ccc;
+}
+#add-customer-form{
+visibility:hidden;
+float:left;
+min-width:50%;
+background-color:#FF675C;
+}
+
+#add-customer-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#create-purchase-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+}
+
+#create-purchase-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#product-manager-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+background-color:#FF675C;
+}
+
+#product-manager-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#records-form{
+float:left;
+visibility:hidden;
+min-width:50%;
+max-width:50%;
+}
+
+#records-form:target{
+visibility:visible;
+position:absolute; /*Close enough..*/
+}
+
+#center-fix{
+width:50%;
+margin:9.5% auto 0 auto;
+
+}
+#cust-name-submit{
+float:right;
+}
+.txt-f-r{
+float:right;
+margin-right:5px;
+}
+.pos-system-select{
+transition: all 0.5s ease;
+width:50%;
+float:left;
+padding-top:200px;
+color:#fff;
+font-family:sans-serif;
+font-size:2em;
+position:relative;
+}
+
+.pos-system-select:hover{
+transition: all 0.5s ease;
+background-color:#fff !important;
+color:#000;
+}
+
+#pos-green{
+background-color:#5FD442;
+border-radius:7px 0 0 0;
+}
+#pos-red{
+background-color:#D4425A;
+border-radius:0 7px 0 0;
+}
+#pos-blue{
+background-color:#428BD4;
+border-radius:0px 0 0 7px;
+}
+#pos-yellow{
+background-color:#EBCF34;
+border-radius:0 0 7px 0;
+}
