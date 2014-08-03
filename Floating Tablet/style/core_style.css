@@ -1,0 +1,56 @@
+body{
+margin:0;
+background-image:url('core_images/background.jpg');
+background-repeat: no-repeat;
+background-size:100% 100%;
+}
+/*Quick-Fix for background size in CSS3*/
+html{
+width:100%;
+height:100%;
+}
+
+#content-container{
+width:50%;
+margin:10px auto 0 auto;
+background-color:#fff;
+border-radius:7px;
+-webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 0.75);
+padding-bottom:50px;
+}
+#menu-bar{
+background-color:#000;
+width:100%;
+height:55px;
+}
+.menu-button{
+float:left;
+min-width:100px;
+background-color:#000;
+height:55px;
+color:#fff;
+font-size:1.6em;
+line-height:50px;
+text-align:center;
+font-family:sans-serif;
+}
+
+.menu-button:hover{
+background-color:#363636;
+border-bottom-style:solid;
+border-bottom-color:#8BD141;
+}
+.menu-button a{
+text-decoration:none;
+}
+
+#page-heading{
+width:100%;
+height:250px;
+background-repeat: no-repeat;
+background-size:100% 100%;
+background-image:url('core_images/header.png');
+border-radius:7px 7px 0 0;
+}
