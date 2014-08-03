@@ -2,7 +2,9 @@ body{
 margin:0;
 background-image:url('core_images/background.jpg');
 background-repeat: no-repeat;
-background-size:100% 100%;
+background-size:cover;
+min-width:1200px;
+
 }
 /*Quick-Fix for background size in CSS3*/
 html{
@@ -23,6 +25,7 @@ padding-bottom:50px;
 #actual-content-container{
 width:98%;
 padding-left:10px;
+position:relative;
 }
 .content-block{
 width:100%;
@@ -34,13 +37,13 @@ font-family:sans-serif;
 color:#000;
 background-color:#80DE54;
 border-radius:7px;
-width:30%;
+position:relative;
 text-align:center;
 }
 #menu-bar{
 background-color:#000;
 width:100%;
-height:55px;
+min-height:55px;
 }
 .menu-button{
 float:left;
@@ -52,6 +55,7 @@ font-size:1.6em;
 line-height:50px;
 text-align:center;
 font-family:sans-serif;
+padding:0 8px;
 }
 
 .menu-button:hover{
